@@ -57,14 +57,21 @@ if __name__ == "__main__":
         print("4. Sell product")
         print("5. Exit")
         choice = input("Choose: ")
-        
+
+        if choice not in ("1","2","3","4","5"):
+         print("Not valid option, Please try again")
+         
+    
+
         if choice == "1":
             product_id = input("Enter ID: ")
             name = input("Enter name: ")
             price = float(input("Enter price: "))
-            quantity = int(input("Enter quantity: ")) 
-            product = Product(product_id, name, price, quantity)
-            inventory.add_product(product)
+            if price not in float(input):
+             print("Not Valid Price")
+             quantity = int(input("Enter quantity: ")) 
+             product = Product(product_id, name, price, quantity)
+             inventory.add_product(product)
 
         elif choice == "2":
               inventory.display_all()
